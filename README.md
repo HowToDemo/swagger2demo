@@ -39,11 +39,12 @@ public class SwaggerConfig {
 				.build();
 	}
 }
+  
   4. Add @ComponentScan Annotation so that spring can identify the location on where to look for Spring components.
   
      @ComponentScan(basePackages = {"com.portfolio.swagger2demo.*"})
   
-  4. Here we have a sample RestController with a User model and a User Response class.
+  5. Here we have a sample RestController with a User model and a User Response class.
   
     @RestController
     public class UserController {
@@ -55,5 +56,5 @@ public class SwaggerConfig {
       }
     }
     
-  5. run your application and go to http://localhost:8080/swagger-ui/index.html
+  6. run your application and go to http://localhost:8080/swagger-ui/index.html
   
