@@ -17,28 +17,28 @@ Integrating Swagger2 in Spring Boot
   
  3. Create a configuration class for Swagger with the ff. code:
     
-@Configuration
-@EnableSwagger2
-public class SwaggerConfig {
+	@Configuration
+	@EnableSwagger2
+	public class SwaggerConfig {
 
-	@Bean
-	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)
-			.apiInfo(apiInfo())
-			.select()
-			.apis(RequestHandlerSelectors.any())
-			.paths(PathSelectors.any())
-			.build();
-	}
-	
-	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder()
-				.title("Spring boot with Swagger 2 Demo")
-				.description("Sample Spring boot application using Swagger2 ")
-				.version("1.0.0")
+		@Bean
+		public Docket api() {
+			return new Docket(DocumentationType.SWAGGER_2)
+				.apiInfo(apiInfo())
+				.select()
+				.apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any())
 				.build();
+		}
+
+		private ApiInfo apiInfo() {
+			return new ApiInfoBuilder()
+					.title("Spring boot with Swagger 2 Demo")
+					.description("Sample Spring boot application using Swagger2 ")
+					.version("1.0.0")
+					.build();
+		}
 	}
-}
   
   4. Add @ComponentScan Annotation so that spring can identify the location on where to look for Spring components.
   
